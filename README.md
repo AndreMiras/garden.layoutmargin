@@ -1,4 +1,4 @@
-A set of mixins (`MarginLayout`, `AddMargin`) that implements `margin` functionality for Kivy widgets.  
+A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality to Kivy widgets.  
 &nbsp;  
 ![demo](http://i.imgur.com/4cCZL3t.gif)
 
