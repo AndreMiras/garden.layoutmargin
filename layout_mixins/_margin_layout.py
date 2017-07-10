@@ -136,7 +136,7 @@ class MarginLayout:
         )
 
     for child in self.children:
-      if hasattr(child, "margin"):
+      if isinstance(child, Add_Margin):
 
         left, top, right, bottom = get_MarginValues(child)
         x_Margin, y_Margin = ((left, right), (bottom, top))
