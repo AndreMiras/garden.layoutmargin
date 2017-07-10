@@ -45,6 +45,10 @@ class MarginLayout:
     widget.fbind("margin", self._trigger_layout)
     return super().add_widget(widget, index)
 
+  def remove_widget(self, widget):
+    widget.funbind("margin", self._trigger_layout)
+    return super().remove_widget(widget)
+
   def do_layout(self, *args):
     self._trigger_layout.cancel()
     super().do_layout(*args)
