@@ -4,7 +4,7 @@ Config.set("graphics", "width",  "1000")
 Config.set("graphics", "height", "1000")
 
 ###  App  ###
-from layout_mixins import MarginLayout, AddMargin, Add_BackgroundColor
+from layout_mixins import MarginLayout, Add_Margin, Add_BackgroundColor
 
 ###  PyPi  ###
 from kivy.app             import App
@@ -18,10 +18,10 @@ from kivy.clock           import Clock
 #//////|   SubClasses   |///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////g2#
 ########################################################################################################################################################################################################################################################################################################~}#
 
-class MarginButton(Button, AddMargin):
+class MarginButton(Button, Add_Margin):
 	def __init__(self, **kwargs):
+		Add_Margin.__init__(self)
 		Button.__init__(self, **kwargs)
-		AddMargin.__init__(self)
 
 class MarginBoxLayout(MarginLayout, BoxLayout, Add_BackgroundColor):
 	def __init__(self, **kwargs):
@@ -119,3 +119,4 @@ class Demo(App):
 
 
 Demo().run()
+
