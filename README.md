@@ -13,8 +13,8 @@ class MarginBoxLayout(MarginLayout, BoxLayout):
     
 class MarginButton(Button, AddMargin):
   def __init__(self, **kwargs):
-    Button.__init__(self, **kwargs)
     AddMargin.__init__(self)
+    Button.__init__(self, **kwargs)
 ```
 
 &nbsp;
