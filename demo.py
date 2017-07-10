@@ -25,15 +25,15 @@ class MarginButton(Button, AddMargin):
 
 class MarginBoxLayout(MarginLayout, BoxLayout, Add_BackgroundColor):
 	def __init__(self, **kwargs):
+		Add_BackgroundColor.__init__(self)
 		MarginLayout.__init__(self)
 		BoxLayout.__init__(self, **kwargs)
-		Add_BackgroundColor.__init__(self)
 
 class MarginFloatLayout(MarginLayout, FloatLayout, Add_BackgroundColor):
 	def __init__(self, **kwargs):
+		Add_BackgroundColor.__init__(self)
 		MarginLayout.__init__(self)
 		FloatLayout.__init__(self, **kwargs)
-		Add_BackgroundColor.__init__(self)
 
 
 ########################################################################################################################################################################################################################################################################################################~{#
