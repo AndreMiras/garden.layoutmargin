@@ -7,14 +7,10 @@ A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality t
 ### @ `.py` subclasses:
 ```python
 class MarginBoxLayout(MarginLayout, BoxLayout):
-  def __init__(self, **kwargs):
-    MarginLayout.__init__(self)
-    BoxLayout.__init__(self, **kwargs)
+  pass
     
-class MarginButton(Button, AddMargin):
-  def __init__(self, **kwargs):
-    AddMargin.__init__(self)
-    Button.__init__(self, **kwargs)
+class MarginButton(AddMargin, Button):
+  pass
 ```
 
 &nbsp;

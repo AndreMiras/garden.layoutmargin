@@ -18,7 +18,8 @@ class Add_Margin:
   _last_MarginX = None
   _last_MarginY = None
 
-  def __init__(self):
+  def __init__(self, **kwargs):
+    super().__init__(**kwargs)
     self.margin = (0, 0, 0, 0)
 
 
