@@ -4,6 +4,7 @@ from kivy.config import Config
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
+
 from layoutmargin import AddBackground, AddMargin, MarginLayout
 
 Config.set("graphics", "width",    "1000")
