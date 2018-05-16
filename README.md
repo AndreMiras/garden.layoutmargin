@@ -10,8 +10,12 @@ A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality t
 
 ### @ `.py` subclasses:
 ```python
+from layoutmargin import AddMargin, MarginLayout
+
+
 class MarginBoxLayout(MarginLayout, BoxLayout):
   pass
+
     
 class MarginButton(AddMargin, Button):
   pass
