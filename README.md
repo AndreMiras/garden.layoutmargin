@@ -1,8 +1,12 @@
+# garden.layoutmargin
+
 A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality to Kivy widgets.  
-&nbsp;  
+
+
 ![demo](http://i.imgur.com/4cCZL3t.gif)
 
-&nbsp;  
+
+## How to use
 
 ### @ `.py` subclasses:
 ```python
@@ -30,3 +34,6 @@ MarginBoxLayout:
       
     # margin: (left, top, right, bottom)
 ```
+
+## Credits
+Forked from [Enteleform/-Kivy-MarginLayout-Demo](https://github.com/Enteleform/-Kivy-MarginLayout-Demo).
