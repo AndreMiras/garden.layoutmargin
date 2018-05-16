@@ -1,7 +1,7 @@
 from typing import NamedTuple
 from kivy.properties import AliasProperty, ObjectProperty
 
-class Add_Margin:
+class AddMargin:
   margin = ObjectProperty()
   _last_X       = None
   _last_Y       = None
@@ -27,18 +27,18 @@ _Y_SIDES = _Sides("bottom", "center_y", "top"  )
 class MarginLayout:
 
   def add_widget(self, widget, index=0):
-    if isinstance(widget, Add_Margin):
+    if isinstance(widget, AddMargin):
       widget.fbind("margin", self._apply_Margins)
     return super().add_widget(widget, index)
 
   def remove_widget(self, widget):
-    if isinstance(widget, Add_Margin):
+    if isinstance(widget, AddMargin):
       widget.funbind("margin", self._apply_Margins)
     return super().remove_widget(widget)
 
   def do_layout(self, *args):
     super().do_layout(*args)
-    for child in [x for x in self.children if isinstance(x, Add_Margin)]:
+    for child in [x for x in self.children if isinstance(x, AddMargin)]:
       self._apply_Margins(child, child.margin)
     self._trigger_layout.cancel()
 
