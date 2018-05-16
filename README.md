@@ -35,5 +35,10 @@ MarginBoxLayout:
     # margin: (left, top, right, bottom)
 ```
 
+## Install
+```
+pip install https://github.com/AndreMiras/garden.layoutmargin/archive/develop.zip
+```
+
 ## Credits
 Forked from [Enteleform/-Kivy-MarginLayout-Demo](https://github.com/Enteleform/-Kivy-MarginLayout-Demo).
