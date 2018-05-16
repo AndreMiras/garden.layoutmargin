@@ -1,17 +1,18 @@
 ###  Kivy Config  ###
+###  PyPi  ###
+from kivy.app import App
+from kivy.clock import Clock
 from kivy.config import Config
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
+from kivy.uix.floatlayout import FloatLayout
+###  App  ###
+from layout_mixins import Add_Background, Add_Margin, MarginLayout
+
 Config.set("graphics", "width",  "1000")
 Config.set("graphics", "height", "1000")
 
-###  App  ###
-from layout_mixins import MarginLayout, Add_Margin, Add_Background
 
-###  PyPi  ###
-from kivy.app             import App
-from kivy.uix.button      import Button
-from kivy.uix.boxlayout   import BoxLayout
-from kivy.uix.floatlayout import FloatLayout
-from kivy.clock           import Clock
 
 
 ########################################################################################################################################################################################################################################################################################################~{#
@@ -111,4 +112,3 @@ class Demo(App):
 
 
 Demo().run()
-

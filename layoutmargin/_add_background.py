@@ -1,6 +1,6 @@
 ###  PyPi  ###
+from kivy.graphics import Color, Rectangle
 from kivy.properties import ObjectProperty
-from kivy.graphics   import Rectangle, Color
 
 
 class Add_Background:
@@ -28,4 +28,3 @@ def _update_BackgroundSize(instance, size):
   instance._background.size = size
 def _update_BackgroundPosition(instance, pos):
   instance._background.pos = pos
-
