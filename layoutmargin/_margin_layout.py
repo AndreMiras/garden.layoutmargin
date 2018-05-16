@@ -72,14 +72,21 @@ class MarginLayout:
             return position, size
 
         def update_Widget(key, value):
-            if    (key == "_last_X"         ): widget.x            = widget._last_X            = value
-            elif(key == "_last_Y"         ): widget.y            = widget._last_Y            = value
-            elif(key == "_last_Width" ): widget.width    = widget._last_Width    = value
-            elif(key == "_last_Height"): widget.height = widget._last_Height = value
-            elif(key == "_last_MarginX"): widget._last_MarginX = value
-            elif(key == "_last_MarginY"): widget._last_MarginY = value
+            if key == "_last_X":
+                widget.x = widget._last_X = value
+            elif key == "_last_Y":
+                widget.y = widget._last_Y = value
+            elif key == "_last_Width":
+                widget.width = widget._last_Width = value
+            elif key == "_last_Height":
+                widget.height = widget._last_Height = value
+            elif key == "_last_MarginX":
+                widget._last_MarginX = value
+            elif key == "_last_MarginY":
+                widget._last_MarginY = value
 
-        def update_SizeHint_Widget(margin, position, lastPosition_Key, size, lastSize_Key):
+        def update_SizeHint_Widget(
+                margin, position, lastPosition_Key, size, lastSize_Key):
             position, size = get_Initial_Position(margin, position, size)
             update_Widget(lastPosition_Key, position)
             update_Widget(lastSize_Key, size)
@@ -87,7 +94,7 @@ class MarginLayout:
         def update_Sized_Widget(
             sides, margin, lastMargin, lastMargin_Key,
             position, position_Hint, lastPosition, lastPosition_Key,
-            size,         size_Hint,         lastSize,         lastSize_Key,
+            size, size_Hint, lastSize, lastSize_Key,
         ):
             if(lastSize == None):
                 position, size = get_Initial_Position(margin, position, size)
@@ -101,21 +108,22 @@ class MarginLayout:
                 elif(position_Hint == sides.inverted):
                     position -= margin[1]
             update_Widget(lastPosition_Key, position)
-            update_Widget(lastSize_Key,         size        )
-            update_Widget(lastMargin_Key,     margin    )
+            update_Widget(lastSize_Key, size)
+            update_Widget(lastMargin_Key, margin)
 
         def apply_Margins(
             sides, margin, lastMargin, lastMargin_Key,
             position, position_Hint, lastPosition, lastPosition_Key,
-            size,         size_Hint,         lastSize,         lastSize_Key,
+            size, size_Hint, lastSize, lastSize_Key,
         ):
             if(size_Hint):
-                update_SizeHint_Widget(margin, position, lastPosition_Key, size, lastSize_Key)
+                update_SizeHint_Widget(
+                    margin, position, lastPosition_Key, size, lastSize_Key)
             else:
                 update_Sized_Widget(
                     sides, margin, lastMargin, lastMargin_Key,
                     position, position_Hint, lastPosition, lastPosition_Key,
-                    size,         size_Hint,         lastSize,         lastSize_Key,
+                    size, size_Hint, lastSize, lastSize_Key,
                 )
 
         left, top, right, bottom = get_MarginValues(margins)
@@ -124,13 +132,19 @@ class MarginLayout:
         w_Hint, h_Hint = widget.size_hint
 
         apply_Margins(
-            sides=_X_SIDES, margin=x_Margin, lastMargin=widget._last_MarginX, lastMargin_Key="_last_MarginX",
-            position=widget.x, position_Hint=x_Hint, lastPosition=widget._last_X, lastPosition_Key="_last_X",
-            size=widget.width, size_Hint=w_Hint,         lastSize=widget._last_Width, lastSize_Key="_last_Width",
+            sides=_X_SIDES, margin=x_Margin,
+            lastMargin=widget._last_MarginX, lastMargin_Key="_last_MarginX",
+            position=widget.x, position_Hint=x_Hint,
+            lastPosition=widget._last_X, lastPosition_Key="_last_X",
+            size=widget.width, size_Hint=w_Hint,
+            lastSize=widget._last_Width, lastSize_Key="_last_Width",
         )
 
         apply_Margins(
-            sides=_Y_SIDES, margin=y_Margin, lastMargin=widget._last_MarginY, lastMargin_Key="_last_MarginY",
-            position=widget.y,    position_Hint=y_Hint, lastPosition=widget._last_Y,    lastPosition_Key="_last_Y",
-            size=widget.height, size_Hint=h_Hint,         lastSize=widget._last_Height, lastSize_Key="_last_Height",
+            sides=_Y_SIDES, margin=y_Margin,
+            lastMargin=widget._last_MarginY, lastMargin_Key="_last_MarginY",
+            position=widget.y, position_Hint=y_Hint,
+            lastPosition=widget._last_Y, lastPosition_Key="_last_Y",
+            size=widget.height, size_Hint=h_Hint,
+            lastSize=widget._last_Height, lastSize_Key="_last_Height",
         )
