@@ -1,5 +1,7 @@
 from typing import NamedTuple
+
 from kivy.properties import AliasProperty, ObjectProperty
+
 
 class AddMargin:
   margin = ObjectProperty()
