@@ -21,9 +21,14 @@ def _initialize_Background(instance):
         instance._background_color = Color(instance.background_color.rgba)
         instance._background = Rectangle(pos=instance.pos, size=instance.size)
 
+
 def _update_BackgroundColor(instance, rgba):
     instance._background_color.rgba = rgba
+
+
 def _update_BackgroundSize(instance, size):
     instance._background.size = size
+
+
 def _update_BackgroundPosition(instance, pos):
     instance._background.pos = pos
