@@ -1,4 +1,3 @@
-###  PyPi  ###
 from kivy.graphics import Color, Rectangle
 from kivy.properties import ObjectProperty
 
