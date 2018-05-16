@@ -1,14 +1,14 @@
 from typing import NamedTuple
 
-from kivy.properties import AliasProperty, ObjectProperty
+from kivy.properties import ObjectProperty
 
 
 class AddMargin:
     margin = ObjectProperty()
-    _last_X             = None
-    _last_Y             = None
-    _last_Width     = None
-    _last_Height    = None
+    _last_X = None
+    _last_Y = None
+    _last_Width = None
+    _last_Height = None
     _last_MarginX = None
     _last_MarginY = None
 
@@ -22,8 +22,9 @@ class _Sides(NamedTuple):
     center:     str
     inverted: str
 
-_X_SIDES = _Sides("left",     "center_x", "right")
-_Y_SIDES = _Sides("bottom", "center_y", "top"    )
+
+_X_SIDES = _Sides("left", "center_x", "right")
+_Y_SIDES = _Sides("bottom", "center_y", "top")
 
 
 class MarginLayout:
@@ -48,18 +49,16 @@ class MarginLayout:
 
         def get_MarginValue(i, value):
             if isinstance(value, str):
-                if("%" in value):
-                    maxSizes = [widget.width, widget.height, widget.width, widget.height]
+                if "%" in value:
+                    maxSizes = [
+                        widget.width, widget.height,
+                        widget.width, widget.height
+                    ]
                     percentage = float(value.replace("%", "").strip()) / 100
                     value = maxSizes[i] * percentage
                 else:
                     raise ValueError(
-                        f"\n\t'{widget.__class__.__name__}' widget contains an invalid margin value:"
-                        f"\n\t\t{widget.margin}"
-                        f"\n\t\t<str> '{value}, index={i}"
-                        f"\n\tMargin values must be one of the following types:"
-                        f"\n\t\t[int, float, str]"
-                        f"\n\t\t(String values will be parsed as percentages, and must contain a '%' symbol at the end. EG: '15%')"
+                        f"'{widget.__class__.__name__}' invalid margin value."
                     )
             return value
 
@@ -96,7 +95,7 @@ class MarginLayout:
             position, position_Hint, lastPosition, lastPosition_Key,
             size, size_Hint, lastSize, lastSize_Key,
         ):
-            if(lastSize == None):
+            if lastSize is None:
                 position, size = get_Initial_Position(margin, position, size)
             else:
                 if(margin != lastMargin) and (position_Hint == sides.primary):
