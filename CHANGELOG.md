@@ -1,8 +1,9 @@
 # Change Log
 
-## [Unreleased]
+## [20180517]
 
   - Forked from Enteleform/-Kivy-MarginLayout-Demo
-  - Automate install
-  - Fix PEP8
-  - rename main module
+  - Install automation
+  - PEP8 fixes
+  - Rename main module
+  - Code cleaning
