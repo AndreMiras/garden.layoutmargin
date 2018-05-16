@@ -2,7 +2,7 @@ from kivy.graphics import Color, Rectangle
 from kivy.properties import ObjectProperty
 
 
-class Add_Background:
+class AddBackground:
     background_color = ObjectProperty(Color())
     _background_color = None
     _background = None
