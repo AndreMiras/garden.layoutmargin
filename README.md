@@ -1,5 +1,8 @@
 # garden.layoutmargin
 
+[![Build Status](https://travis-ci.com/AndreMiras/garden.layoutmargin.svg?branch=develop)](https://travis-ci.com/AndreMiras/garden.layoutmargin)
+[![PyPI version](https://badge.fury.io/py/layoutmargin.svg)](https://badge.fury.io/py/layoutmargin)
+
 A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality to Kivy widgets.  
 
 
@@ -14,34 +17,36 @@ from layoutmargin import AddMargin, MarginLayout
 
 
 class MarginBoxLayout(MarginLayout, BoxLayout):
-  pass
+    pass
 
     
 class MarginButton(AddMargin, Button):
-  pass
+    pass
 ```
 
-&nbsp;
 
 ### @ `.kv` layout:
 ```yaml
 MarginBoxLayout:
     
     MarginButton:
-      margin: (30, 10, 30, 10) # integer / float
+        margin: (30, 10, 30, 10) # integer / float
       
     MarginButton:
-      margin: ("10%", "10%", "10%", "10%") # percentage of total widget size
+        margin: ("10%", "10%", "10%", "10%") # percentage of total widget size
       
     MarginButton:
-      margin: (30, "10%", 30, "10%") # mixed
-      
-    # margin: (left, top, right, bottom)
+        margin: (30, "10%", 30, "10%") # mixed
+```
+
+## Run the demo
+```
+make run
 ```
 
 ## Install
-```
-pip install https://github.com/AndreMiras/garden.layoutmargin/archive/develop.zip
+```sh
+pip install layoutmargin
 ```
 
 ## Credits
