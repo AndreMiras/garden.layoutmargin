@@ -23,22 +23,24 @@ class MarginButton(AddMargin, Button):
     pass
 ```
 
-&nbsp;
 
 ### @ `.kv` layout:
 ```yaml
 MarginBoxLayout:
     
     MarginButton:
-      margin: (30, 10, 30, 10) # integer / float
+        margin: (30, 10, 30, 10) # integer / float
       
     MarginButton:
-      margin: ("10%", "10%", "10%", "10%") # percentage of total widget size
+        margin: ("10%", "10%", "10%", "10%") # percentage of total widget size
       
     MarginButton:
-      margin: (30, "10%", 30, "10%") # mixed
-      
-    # margin: (left, top, right, bottom)
+        margin: (30, "10%", 30, "10%") # mixed
+```
+
+## Run the demo
+```
+make run
 ```
 
 ## Install

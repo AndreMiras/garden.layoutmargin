@@ -24,6 +24,9 @@ endif
 test: virtualenv
 	$(TOX)
 
+run: virtualenv
+	$(PYTHON) demo.py
+
 clean: release/clean docs/clean
 	py3clean src/
 	find . -type d -name "__pycache__" -exec rm -r {} +
