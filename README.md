@@ -1,6 +1,7 @@
 # garden.layoutmargin
 
 [![Build Status](https://travis-ci.com/AndreMiras/garden.layoutmargin.svg?branch=develop)](https://travis-ci.com/AndreMiras/garden.layoutmargin)
+[![PyPI version](https://badge.fury.io/py/layoutmargin.svg)](https://badge.fury.io/py/layoutmargin)
 
 A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality to Kivy widgets.  
 
@@ -44,8 +45,8 @@ make run
 ```
 
 ## Install
-```
-pip install https://github.com/AndreMiras/garden.layoutmargin/archive/develop.zip
+```sh
+pip install layoutmargin
 ```
 
 ## Credits

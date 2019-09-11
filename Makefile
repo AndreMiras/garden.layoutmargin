@@ -3,6 +3,7 @@ ACTIVATE_PATH=$(VENV_NAME)/bin/activate
 PIP=`. $(ACTIVATE_PATH); which pip`
 TOX=`. $(ACTIVATE_PATH); which tox`
 PYTHON=$(VENV_NAME)/bin/python
+TWINE=`which twine`
 SYSTEM_DEPENDENCIES=python3-dev virtualenv build-essential libssl-dev \
     libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
 OS=$(shell lsb_release -si)
@@ -27,7 +28,17 @@ test: virtualenv
 run: virtualenv
 	$(PYTHON) demo.py
 
-clean: release/clean docs/clean
+release/clean:
+	rm -rf dist/ build/
+
+release/build: release/clean
+	$(PYTHON) setup.py sdist bdist_wheel
+	$(TWINE) check dist/*
+
+release/upload:
+	$(TWINE) upload dist/*
+
+clean: release/clean
 	py3clean src/
 	find . -type d -name "__pycache__" -exec rm -r {} +
 	find . -type d -name "*.egg-info" -exec rm -r {} +

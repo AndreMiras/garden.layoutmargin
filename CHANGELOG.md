@@ -3,6 +3,7 @@
 ## [Unreleased]
 
   - Setup CI, refs #1
+  - Publish to PyPI, refs #2
 
 ## [20180517]
 
