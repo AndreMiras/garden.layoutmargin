@@ -16,11 +16,11 @@ from layoutmargin import AddMargin, MarginLayout
 
 
 class MarginBoxLayout(MarginLayout, BoxLayout):
-  pass
+    pass
 
     
 class MarginButton(AddMargin, Button):
-  pass
+    pass
 ```
 
 &nbsp;
