@@ -11,7 +11,7 @@ def read(fname):
 # exposing the params so it can be imported
 setup_params = {
     'name': 'layoutmargin',
-    # 'version': '20180517',
+    'version': '20190911',
     'description': 'Mixins that adds margin functionality to Kivy widgets',
     'long_description': read('README.md'),
     'long_description_content_type': 'text/markdown',
