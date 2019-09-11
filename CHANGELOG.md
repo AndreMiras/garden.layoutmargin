@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [20190911]
 
   - Setup CI, refs #1
   - Publish to PyPI, refs #2
