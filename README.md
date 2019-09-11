@@ -1,5 +1,7 @@
 # garden.layoutmargin
 
+[![Build Status](https://travis-ci.com/AndreMiras/garden.layoutmargin.svg?branch=develop)](https://travis-ci.com/AndreMiras/garden.layoutmargin)
+
 A set of mixins (`MarginLayout`, `AddMargin`) that adds `margin` functionality to Kivy widgets.  
 
 
